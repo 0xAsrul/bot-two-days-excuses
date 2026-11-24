@@ -11,6 +11,7 @@ LIMIT = 200
 def main() -> None:
     assert isinstance(LINE, str)
     assert LINE.strip(), "line must not be blank"
+    assert LINE == LINE.strip(), "line must not have leading or trailing whitespace"
     assert "\n" not in LINE and "\r" not in LINE, "line must be a single line"
     assert 1 <= len(LINE) <= LIMIT, "line must be 1-200 characters"
     os.makedirs("/output", exist_ok=True)
